@@ -10,8 +10,3 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
-
-.col-md-3 {
-    flex: 1 1 23%;
-    margin: 0 10px; 
-  }
