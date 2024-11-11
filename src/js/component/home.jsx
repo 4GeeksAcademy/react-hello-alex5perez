@@ -5,6 +5,7 @@ import Card from "./card";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
+import Footer from "./footer";
 
 //create your first component
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
 			<Navbar />
 			<Jumbotron />
 			<Card />
+			<Footer />
 		</div>
 	);
 };

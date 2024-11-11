@@ -1,45 +1,60 @@
 import React from 'react';
 import '../../styles/index.css';
-import image1 from '../../img/image1.jpg';
-import image2 from '../../img/image2.png';
-import image3 from '../../img/image3.jpg';
-import image4 from '../../img/image4.jpg';
+import image1 from '/src/img/image1.jpg';
+import image2 from '/src/img/image2.png';
+import image3 from '/src/img/image3.jpg';
+import image4 from '/src/img/image4.jpg';
+import PropTypes from "prop-types";
 
-function Card() {
+const Card = (props) => {
+  const cardInfo = [
+    {
+      title: "Montañas",
+      image: image1,
+      description: "Imagen de las montañas",
+      buttonUrl: "montañas.com",
+    },
+    {
+      title: "God of War",
+      image: image2,
+      description: "Kratos pasandola bien",
+      buttonUrl: "godofwar.com",
+    },
+    {
+      title: "Resident Evil",
+      image: image3,
+      description: "Resident Evil Village wallpaper",
+      buttonUrl: "capcom.com",
+    },
+    {
+      title: "Outlast",
+      image: image4,
+      description: "Juego de Terror Outlast",
+      buttonUrl: "outlast.com",
+    },
+  ];
+
   return (
-    <div class="container my-4">
-      <div class="row d-flex justify-content-between">
-
-        <div class="card col-md-3 col-sm-6 col-12">
-          <img src={image1} />
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div className="container my-4">
+      <div className="row d-flex justify-content-between">
+        {cardInfo.map((props, index) => (
+          <div key={index} className="card col-md-3 col-sm-6 col-12">
+          <img src={props.image} />
+          <h5 class="card-title">{props.title}</h5>
+          <p class="card-text">{props.description}</p>
+          <a href={props.buttonUrl} class="btn btn-primary">Go somewhere</a>
         </div>
-
-        <div class="card col-md-3 col-sm-6 col-12">
-          <img src={image2} />
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-
-        <div class="card col-md-3 col-sm-6 col-12">
-          <img src={image3} />
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-
-        <div class="card col-md-3 col-sm-6 col-12">
-          <img src={image4} />
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+        ))}
       </div>
     </div>
   );
 }
+
+Card.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.string,
+  description: PropTypes.string,
+  buttonUrl: PropTypes.string,
+};
 
 export default Card;
