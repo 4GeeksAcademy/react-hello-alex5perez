@@ -2,8 +2,8 @@ import React from 'react';
 
 function Footer(){
     return(
-        <footer class="bg-dark py-3">
-            <p class="text-white">Footer</p>
+        <footer className="bg-dark py-3">
+            <p className="text-white">Footer</p>
         </footer>
     )
 }

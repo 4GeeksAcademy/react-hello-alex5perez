@@ -35,15 +35,17 @@ const Card = (props) => {
   ];
 
   return (
-    <div className="container my-4">
-      <div className="row d-flex justify-content-between">
+    <div className="container my-4 p-0">
+      <div className="row g-3">
         {cardInfo.map((props, index) => (
-          <div key={index} className="card col-md-3 col-sm-6 col-12">
-          <img src={props.image} />
-          <h5 class="card-title">{props.title}</h5>
-          <p class="card-text">{props.description}</p>
-          <a href={props.buttonUrl} class="btn btn-primary">Go somewhere</a>
-        </div>
+          <div key={index} className="col-lg-3 col-md-6 col-12">
+            <div class="card p-1">
+              <img src={props.image} />
+              <h5 className="card-title mt-3">{props.title}</h5>
+              <p className="card-text">{props.description}</p>
+              <a href={props.buttonUrl} className="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         ))}
       </div>
     </div>
